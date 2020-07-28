@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // crtTest
 double crtTest(double test);
-RcppExport SEXP _rtest_crtTest(SEXP testSEXP) {
+RcppExport SEXP _j15221_crtTest(SEXP testSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -17,14 +17,39 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// crank
+double crank(NumericVector v1, NumericVector v2);
+RcppExport SEXP _j15221_crank(SEXP v1SEXP, SEXP v2SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type v1(v1SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type v2(v2SEXP);
+    rcpp_result_gen = Rcpp::wrap(crank(v1, v2));
+    return rcpp_result_gen;
+END_RCPP
+}
+// crank2
+double crank2(NumericMatrix v12);
+RcppExport SEXP _j15221_crank2(SEXP v12SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type v12(v12SEXP);
+    rcpp_result_gen = Rcpp::wrap(crank2(v12));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rtest_crtTest", (DL_FUNC) &_rtest_crtTest, 1},
+    {"_j15221_crtTest", (DL_FUNC) &_j15221_crtTest, 1},
+    {"_j15221_crank", (DL_FUNC) &_j15221_crank, 2},
+    {"_j15221_crank2", (DL_FUNC) &_j15221_crank2, 1},
     {NULL, NULL, 0}
 };
 
 void my_package_init(DllInfo *dll);
-RcppExport void R_init_rtest(DllInfo *dll) {
+RcppExport void R_init_j15221(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
     my_package_init(dll);

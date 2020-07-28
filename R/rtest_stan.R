@@ -11,7 +11,7 @@
 #'
 #' @export
 #'
-rtSTAN <- function(lst.data, stan.mdl = "example",
+rtSTAN <- function(lst.data, stan.mdl = "j15221",
                    chains = 4, iter = 2000, warmup = 1000,
                    control = list(adapt_delta=0.95), ...) {
 
