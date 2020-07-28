@@ -15,6 +15,11 @@ crank <- function(v1, v2) {
     .Call(`_j15221_crank`, v1, v2)
 }
 
+#' Rank function
+#'
+#' Rank function
+#'
+#' @export
 crank2 <- function(v12) {
     .Call(`_j15221_crank2`, v12)
 }

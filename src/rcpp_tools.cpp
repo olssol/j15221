@@ -44,7 +44,11 @@ double crank(NumericVector v1, NumericVector v2) {
   return(rst);
 }
 
-// sign-rank test
+//' Rank function
+//'
+//' Rank function
+//'
+//' @export
 // [[Rcpp::export]]
 double crank2(NumericMatrix v12) {
   int    n   = v12.nrow();
